@@ -20,7 +20,7 @@ namespace IS414_Lab3_ZS
             PublicKey wallet2 = key2.publicKey();
 
 
-            Blockchain bisquecoin = new Blockchain(2,100);
+            Blockchain bisquecoin = new Blockchain(3,100);
 
             Console.WriteLine("Start the Miner.");
             bisquecoin.MinePendingTransactions(wallet1);
@@ -41,6 +41,7 @@ namespace IS414_Lab3_ZS
             string blockJSON = JsonConvert.SerializeObject(bisquecoin, Formatting.Indented);
             Console.WriteLine(blockJSON);
 
+            //bisquecoin.GetLatestBlock().PreviousHash = "12345";
 
             if (bisquecoin.IsChainValid())
             {
